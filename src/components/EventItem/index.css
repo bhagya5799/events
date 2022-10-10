@@ -1,0 +1,16 @@
+/* Write your CSS here */
+li{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-wrap: wrap;
+    /* margin-bottom: 2rem; */
+}
+
+.img{
+    width: 15rem;
+/* height: 7rem; */
+}
+.location{
+    color: gray;
+}

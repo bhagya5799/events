@@ -1,0 +1,33 @@
+/* Write your CSS here */
+.rigistr-container{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.yet-reg-img, .closed-img{
+    width: 15rem;
+    height: 15rem;
+}
+.rigistr-container>p{
+    font-size: 20px;
+    color: rgb(34, 31, 31);
+}
+.ClosedRegistered>p{
+     font-size: 20px;
+    color: rgb(153, 146, 146);
+}
+.rigistred{
+    text-align: center;
+
+
+}
+.rigistred>p{
+    color:rgb(29, 26, 26);
+    font-size: 18px;
+
+}
+.img-tick{
+    height: 5rem;
+    width: 5rem;
+}

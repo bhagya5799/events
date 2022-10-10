@@ -1,0 +1,33 @@
+/* Write your CSS here */
+body{
+width: 100vw;
+
+}
+.events-container{
+    display: flex;
+    width: 100%;
+    border: 2px solid gray;
+    overflow: hidden;
+
+}
+.Events{
+    width: 60%;
+    background-color:#475569;
+    color: white;
+    padding: 3rem;
+}
+ul{
+     list-style-type: none;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 2rem;
+}
+.descrption{
+    padding: 2rem;
+    color: #475569;
+    
+}
+.res-container{
+    padding: 2rem;
+    text-align: center;
+}
