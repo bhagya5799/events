@@ -52,6 +52,12 @@ const eventsList = [
     registrationStatus: 'REGISTRATIONS_CLOSED',
   },
 ]
+
+const ststusConstains = {
+  status: eventsList[0].registrationStatus,
+}
+console.log(ststusConstains.status)
+
 // Write your code here
 class Events extends Component {
   render() {
