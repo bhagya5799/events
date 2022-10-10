@@ -3,28 +3,15 @@ import {Component} from 'react'
 import Events from '../EventItem'
 import './index.css'
 
+const apiStatus = {
+  intial: 'notRegistred',
+  success: 'Registered',
+  failure: 'closedRegisterd',
+}
+
 class ActiveEventRegistrationDetails extends Component {
   state = {
-    userName: 'rahul',
-    password: 'rahul@2021',
-    apiStatus: 'eventsList',
-  }
-
-  onClickRegister = async () => {
-    const {userName, password} = this.state
-    const userDetails = {userName, password}
-    const url = 'https://apis.ccbp.in/login'
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(userDetails),
-    }
-    const response = await fetch(url, options)
-    const data = await response.json()
-    console.log(data)
-  }
-
-  componentDidUpdate = () => {
-    this.getLoginDetails()
+    status: '',
   }
 
   RigistreHere = () => (
@@ -63,12 +50,11 @@ class ActiveEventRegistrationDetails extends Component {
   )
 
   render() {
-    const {apiStatus} = this.state
-    const api = this.AlreadyRegitred()
+    const {status} = this.state
+    const {eventsList} = this.props
     return (
       <div>
-        <h1>{api}</h1>
-        {/* <button>{api}</button> */}
+        <h1>{this.ClosedRegistered}</h1>
       </div>
     )
   }

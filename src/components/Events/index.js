@@ -52,15 +52,34 @@ const eventsList = [
     registrationStatus: 'REGISTRATIONS_CLOSED',
   },
 ]
-
-const ststusConstains = {
-  status: eventsList[0].registrationStatus,
+const apiStatusConstants = {
+  intial: 'INTIAL',
+  success: 'SUCCESS',
+  failure: 'FAILURE',
 }
-console.log(ststusConstains.status)
 
 // Write your code here
 class Events extends Component {
+  state = {
+    status: eventsList[0].registrationStatus,
+  }
+
+  onClikimgUrl = () => {
+    console.log('kk')
+  }
+
+  getFilter = () => {
+    const {status} = this.state
+    const filterstatus = eventsList.filter(
+      eachItem => eachItem.registrationStatus === status,
+    )
+    return filterstatus
+  }
+
   render() {
+    const filterstatus = this.getFilter()
+    const {RigistreHere} = this.props
+    const {status} = this.state
     return (
       <div className="events-container">
         <div className="Events">
@@ -75,7 +94,12 @@ class Events extends Component {
           <p className="descrption">
             Click on an event, to view its registration details
           </p>
-          <ActiveEventRegistrationDetails />
+          {filterstatus.map(eachItem => (
+            <ActiveEventRegistrationDetails
+              details={eachItem}
+              key={eachItem.id}
+            />
+          ))}
         </div>
       </div>
     )
