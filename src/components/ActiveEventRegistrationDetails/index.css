@@ -1,33 +1,105 @@
-/* Write your CSS here */
-.rigistr-container{
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+.registration-status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 40%;
+  height: 100vh;
 }
-.yet-reg-img, .closed-img{
-    width: 15rem;
-    height: 15rem;
-}
-.rigistr-container>p{
-    font-size: 20px;
-    color: rgb(34, 31, 31);
-}
-.ClosedRegistered>p{
-     font-size: 20px;
-    color: rgb(153, 146, 146);
-}
-.rigistred{
-    text-align: center;
 
-
+.view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
 }
-.rigistred>p{
-    color:rgb(29, 26, 26);
-    font-size: 18px;
 
+.yet-to-register-image {
+  width: 90%;
+  max-width: 461px;
 }
-.img-tick{
-    height: 5rem;
-    width: 5rem;
+
+.register-description {
+  text-align: center;
+  color: #64748b;
+  font-family: 'Roboto';
+  font-size: 19px;
+  line-height: 1.5;
+  margin: 0px;
+  margin-top: 48px;
+}
+
+.register-here-button {
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  background-color: #0967d2;
+  width: 90%;
+  border: none;
+  border-radius: 8px;
+  margin-top: 48px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+.registered-img {
+  width: 80%;
+  max-width: 100px;
+}
+
+.registered-heading {
+  text-align: center;
+  color: #323f4b;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0px;
+  margin-top: 40px;
+}
+
+.registrations-closed-image {
+  width: 80%;
+  max-width: 393px;
+}
+
+.registrations-closed-heading {
+  text-align: center;
+  color: #323f4b;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0px;
+  margin-top: 32px;
+}
+
+.registrations-closed-description {
+  text-align: center;
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 1.7;
+  width: 60%;
+  margin: 0px;
+  margin-top: 16px;
+}
+
+.no-active-event-description {
+  text-align: center;
+  align-self: flex-start;
+  color: #64748b;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.75;
+  margin: 0px;
+  margin-top: 64px;
+  margin-right: 16px;
+  margin-left: 16px;
 }

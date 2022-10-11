@@ -1,6 +1,8 @@
-import React, {Component} from 'react'
-import EventItem from '../EventItem'
+import {Component} from 'react'
+
 import ActiveEventRegistrationDetails from '../ActiveEventRegistrationDetails'
+import EventItem from '../EventItem'
+
 import './index.css'
 
 const eventsList = [
@@ -52,57 +54,56 @@ const eventsList = [
     registrationStatus: 'REGISTRATIONS_CLOSED',
   },
 ]
-const apiStatusConstants = {
-  intial: 'INTIAL',
-  success: 'SUCCESS',
-  failure: 'FAILURE',
-}
 
-// Write your code here
 class Events extends Component {
   state = {
-    status: eventsList[0].registrationStatus,
+    activeEventId: '',
   }
 
-  onClikimgUrl = () => {
-    console.log('kk')
-  }
-
-  getFilter = () => {
-    const {status} = this.state
-    const filterstatus = eventsList.filter(
-      eachItem => eachItem.registrationStatus === status,
+  getActiveEventRegistrationStatus = () => {
+    const {activeEventId} = this.state
+    const activeEventDetails = eventsList.find(
+      event => event.id === activeEventId,
     )
-    return filterstatus
+    if (activeEventDetails) {
+      return activeEventDetails.registrationStatus
+    }
+    return ''
+  }
+
+  setActiveEventId = id => {
+    this.setState({activeEventId: id})
+  }
+
+  renderEventsList = () => {
+    const {activeEventId} = this.state
+    return (
+      <ul className="events-list">
+        {eventsList.map(eachEvent => (
+          <EventItem
+            key={eachEvent.id}
+            eventDetails={eachEvent}
+            setActiveEventId={this.setActiveEventId}
+            isActive={eachEvent.id === activeEventId}
+          />
+        ))}
+      </ul>
+    )
   }
 
   render() {
-    const filterstatus = this.getFilter()
-    const {RigistreHere} = this.props
-    const {status} = this.state
     return (
       <div className="events-container">
-        <div className="Events">
-          <h3>Events</h3>
-          <ul>
-            {eventsList.map(eachItem => (
-              <EventItem details={eachItem} key={eachItem.id} />
-            ))}
-          </ul>
+        <div className="events-content">
+          <h1 className="heading">Events</h1>
+          {this.renderEventsList()}
         </div>
-        <div className="res-container">
-          <p className="descrption">
-            Click on an event, to view its registration details
-          </p>
-          {filterstatus.map(eachItem => (
-            <ActiveEventRegistrationDetails
-              details={eachItem}
-              key={eachItem.id}
-            />
-          ))}
-        </div>
+        <ActiveEventRegistrationDetails
+          activeEventRegistrationStatus={this.getActiveEventRegistrationStatus()}
+        />
       </div>
     )
   }
 }
+
 export default Events
